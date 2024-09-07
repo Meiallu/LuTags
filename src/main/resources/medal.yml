@@ -1,0 +1,49 @@
+medals:
+  Peace:
+    name: "Peace"
+    icon: "&e✌"
+    prefix: "&e✌ "
+    priority: 1
+    permission: "lutags.medal.paz"
+  Coffe:
+    name: "Coffe"
+    icon: "&e&l☕"
+    prefix: "&e&l☕ "
+    priority: 2
+    permission: "lutags.medal.cafe"
+  Flash:
+    name: "Flash"
+    icon: "&6&l⚡"
+    prefix: "&6&l⚡ "
+    priority: 3
+    permission: "lutags.medal.flash"
+  Music:
+    name: "Music"
+    icon: "&5&l♬"
+    prefix: "&5&l♬ "
+    priority: 4
+    permission: "lutags.medal.music"
+  YinYang:
+    name: "YinYang"
+    icon: "&f&l☯"
+    prefix: "&f&l☯ "
+    priority: 5
+    permission: "lutags.medal.yinyang"
+  Toxic:
+    name: "Toxic"
+    icon: "&a&l☣"
+    prefix: "&a&l☣ "
+    priority: 6
+    permission: "lutags.medal.toxic"
+  Love:
+    name: "Love"
+    icon: "&4&l❤"
+    prefix: "&4&l❤ "
+    priority: 7
+    permission: "lutags.medal.love"
+  None:
+    name: "None"
+    icon: "&7None"
+    prefix: ""
+    priority: 8
+    permission: "lutags.medal.none"

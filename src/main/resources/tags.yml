@@ -1,0 +1,81 @@
+tags:
+  Owner:
+    name: "Owner"
+    color: "&4"
+    styled: "&4Owner"
+    prefix: "&4&lOwner&4 "
+    priority: 1
+    permission: "lutags.tags.owner"
+    aliases: [ ]
+  Admin:
+    name: "Admin"
+    color: "&4"
+    styled: "&4Admin"
+    prefix: "&4&lAdmin&4 "
+    priority: 2
+    permission: "lutags.tags.admin"
+    aliases: [ "adm" ]
+  Manager:
+    name: "Manager"
+    color: "&c"
+    styled: "&cManager"
+    prefix: "&c&lManager&c "
+    priority: 3
+    permission: "lutags.tags.manager"
+    aliases: [ ]
+  Mod+:
+    name: "Mod+"
+    color: "&d"
+    styled: "&dMod&6+"
+    prefix: "&d&lMod&6+&d "
+    priority: 4
+    permission: "lutags.tags.mod+"
+    aliases: [ "moderator+" ]
+  Mod:
+    name: "Mod"
+    color: "&5"
+    styled: "&5Mod"
+    prefix: "&5&lMod&5 "
+    priority: 5
+    permission: "lutags.tags.mod"
+    aliases: [ "moderator" ]
+  TrialMod:
+    name: "Trial"
+    color: "&6"
+    styled: "&6Trial"
+    prefix: "&6&lTrial&6 "
+    priority: 6
+    permission: "lutags.tags.trialmod"
+    aliases: [ "tmod", "tmoderator" ]
+  Helper:
+    name: "Helper"
+    color: "&9"
+    styled: "&9Helper"
+    prefix: "&9&lHelper&9 "
+    priority: 7
+    permission: "lutags.tags.helper"
+    aliases: [ ]
+  Builder:
+    name: "Builder"
+    color: "&3"
+    styled: "&3Builder"
+    prefix: "&3&lBuilder&3 "
+    priority: 8
+    permission: "lutags.tags.builder"
+    aliases: [ "build" ]
+  Vip:
+    name: "Vip"
+    color: "&a"
+    styled: "&aVip"
+    prefix: "&a&lVip&a "
+    priority: 9
+    permission: "lutags.tags.vip"
+    aliases: [ ]
+  Member:
+    name: "Member"
+    color: "&7"
+    styled: "&7Member"
+    prefix: "&7"
+    priority: 10
+    permission: "lutags.tags.member"
+    aliases: [ "default" ]

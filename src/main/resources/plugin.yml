@@ -1,0 +1,16 @@
+name: LuTags
+authors: [ Meiallu ]
+version: '1.0'
+main: me.meiallu.lutags.LuTags
+load: STARTUP
+commands:
+  tag:
+    aliases: [ tags ]
+  lutags:
+    aliases: [ lulutags ]
+  medal:
+    aliases: [ medals ]
+  taggui:
+    aliases: [ taginterface ]
+  medalgui:
+    aliases: [ medalinterface ]

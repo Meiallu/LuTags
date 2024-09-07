@@ -1,0 +1,30 @@
+# if you don't know what any of this means...
+# DO NOT CHANGE ANYTHING, you might break something.
+
+database_type: "sqlite" # Possible values: sqlite, mysql, redis, mongodb
+
+# Database configuration details for each type
+database:
+  sqlite:
+    url: "jdbc:sqlite:plugins/LuTags/users.db"
+    clazz: "org.sqlite.JDBC"
+  mysql:
+    host: "localhost"
+    port: "3306"
+    database: "database"
+    username: "user"
+    password: "password"
+    clazz: "com.mysql.cj.jdbc.Driver"
+  mongodb:
+    uri: "mongodb://user:password@localhost:27017"
+    database: "database"
+  redis:
+    address: "127.0.0.1"
+    port: "6379"
+    password: "password"
+
+
+sql_table_creation: "CREATE TABLE IF NOT EXISTS user_data (uuid TEXT PRIMARY KEY, tag TEXT, medal TEXT);"
+sql_write: "INSERT OR REPLACE INTO user_data (uuid, tag, medal) VALUES (?, ?, ?);"
+sql_read_tag: "SELECT tag FROM user_data WHERE uuid = ?;"
+sql_read_medal: "SELECT medal FROM user_data WHERE uuid = ?;"

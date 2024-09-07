@@ -1,0 +1,171 @@
+# Available placeholders:
+#
+# %lutags_maxtag_name%
+# %lutags_maxtag_color%
+# %lutags_maxtag_styled%
+# %lutags_maxtag_prefix%
+# %lutags_maxtag_priority%
+# %lutags_maxtag_permission%
+#
+# %lutags_tag_name%
+# %lutags_tag_color%
+# %lutags_tag_styled%
+# %lutags_tag_prefix%
+# %lutags_tag_priority%
+# %lutags_tag_permission%
+#
+# %lutags_tag_<tagname>_name%
+# %lutags_tag_<tagname>_color%
+# %lutags_tag_<tagname>_styled%
+# %lutags_tag_<tagname>_prefix%
+# %lutags_tag_<tagname>_priority%
+# %lutags_tag_<tagname>_permission%
+#
+# %lutags_medal_name%
+# %lutags_medal_icon%
+# %lutags_medal_prefix%
+# %lutags_medal_priority%
+# %lutags_medal_permission%
+#
+# %lutags_medal_<medalname>_name%
+# %lutags_medal_<medalname>_icon%
+# %lutags_medal_<medalname>_prefix%
+# %lutags_medal_<medalname>_priority%
+# %lutags_medal_<medalname>_permission%
+
+# Interval (in seconds) to update all player tags. Note: This may cause lag.
+# If using our nametags, player nametags will automatically update when their medal or tag changes.
+update_enabled: true
+update_interval: 60
+
+# Interval (in seconds) to verify if players still have the permission for their current tag and medal.
+# If not, the tag or medal is removed. This check also occurs on player join, so this verification interval
+# is optional but recommended for additional consistency.
+verification_enabled: true
+verification_interval: 120
+
+# Interval (in ticks) to verify players formats.
+# This is good to be low, but only if you have multiple formats.
+placeholder_update_enabled: true
+placeholder_update_interval: 20
+
+# Enable or disable the nametags above the players heads.
+custom_nametags: true
+
+# Enable or disable spam heaven, this is good for bug reporting.
+debug: false
+
+# Enable or disable each system.
+tag_system: true
+tag_interface: true
+medal_system: true
+medal_interface: true
+
+# Inventory title for each interface.
+menus:
+  titles:
+    tag: "Choose your tag"
+    medal: "Choose your medal"
+  items:
+    tag: "NAME_TAG"
+    medal: "DOUBLE_PLANT"
+    remove_tag: "REDSTONE"
+    remove_medal: "REDSTONE"
+  names:
+    tag: "%lutags_tag_prefix%%player_name% %lutags_medal_icon%"
+    medal: "%lutags_tag_prefix%%player_name% %lutags_medal_prefix%"
+    remove_tag: "§cRemove current tag"
+    remove_medal: "§cRemove current medal"
+  lore:
+    tag: "§eClick to select"
+    medal: "§eClick to select"
+    remove_tag: "§7Remove your current tag"
+    remove_medal: "§7Remove your current medal"
+  position:
+    remove_tag: "49"
+    remove_medal: "49"
+
+# Message shown when a player does not have any tags or medals.
+no_tags: "§cYou do not have any tags."
+no_medals: "§cYou do not have any medals."
+
+# Message displayed when a player tries to select a tag or medal that is already selected.
+already_selected_medal: "§cYou have already selected this medal."
+already_selected_tag: "§cYou have already selected this tag."
+
+# Message displayed when a player tries to select a tag or medal that doesn't exist.
+tag_not_found: "§cThis tag has not been found."
+medal_not_found: "§cThis medal has not been found."
+
+# Message shown when a player successfully selects a tag or medal.
+successfully_selected_medal: "§eYour medal has been set to %lutags_medal_icon%§e."
+successfully_selected_tag: "§eYour tag has been set to %lutags_tag_styled%§e."
+successfully_set_medal: "§eYou set §6{target}'s §emedal to {icon} §ewith success."
+successfully_set_tag: "§eYou set §6{target}'s §etag to {styled} §ewith success."
+
+# Other messages.
+only_players: "§cThis command can only be executed by players."
+no_permission: "§cYou do not have permission."
+reloaded_successfully: "§aYou've reloaded LuTags successfully."
+current_version: "§ePlugin current version: §7{version}§e."
+not_online: "§cThis player is not online."
+
+# Prefix used when displaying a list of a player's tags or medals.
+prefix_medal_list: "§aYour medals: "
+prefix_tag_list: "§aYour tags: "
+
+# Message format for displaying a preview of a tag or medal selection.
+preview: "§6Preview: {preview}\n§eClick to select"
+
+# Format configuration for custom nametags.
+# This system allows powerful customization of player name tags based on specific conditions.
+# It can be configured to apply different formats in different worlds or based on specific placeholders.
+formats:
+  # Default format, typically used in lobbies or before a game starts.
+  default:
+    enabled: true  # If true, this format is active; if false, it will be ignored.
+    prefix: "%lutags_tag_prefix%"  # Prefix to display if all conditions are met.
+    suffix: " %lutags_medal_prefix%"  # Suffix to display if all conditions are met.
+    priority: "%lutags_tag_priority%"  # Numeric priority value to determine ordering in the tab list.
+    worlds:
+      - "world"  # This format applies in the "world" world.
+      - "build"  # This format applies in the "build" world.
+      - "hub_*"  # Applies to any world with a name starting with "hub".
+      - "lobby_*"  # Applies to any world with a name starting with "lobby".
+    conditional:
+      # Additional conditions checked if the player is not in the specified worlds.
+      game_status: [ "waiting", "starting" ]  # Format applies if game status is "waiting" or "starting".
+  game:
+    enabled: true
+    prefix: "%team_color%(%team_letter%) "
+    suffix: ""
+    priority: "%team_priority%"
+    worlds:
+      - "game_*"
+    conditional:
+      game_status: [ "running" ]
+  spectator:
+    enabled: true
+    prefix: "§7(SPEC) "
+    suffix: ""
+    priority: ""
+    worlds:
+      - "game_*"
+    conditional:
+      player_game_status: [ "spectator" ]
+
+# Explain the main command usage (/lutags)
+# This can only be seen by those with the command permission.
+main_command_permission: "lutags.admin.all"
+main_command_usage:
+  - "§7"
+  - "§6Command usage:"
+  - "§e  /lutags version §7- §bCurrent plugin version."
+  - "§e  /lutags reload §7- §bReload configurations."
+  - "§e  /lutags set <medal/tag> <player> <tag>  §7- §bSet a player's tag or medal."
+  - "§7"
+
+# Explain the usage of each command
+# This can only be seen by those with the command permission.
+usages:
+  admin_tag_set: "§cUsage: /lutags set <medal/tag> <player> <tag>"
